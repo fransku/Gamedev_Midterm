@@ -18,23 +18,62 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="245" />
+          <entry key="cs" value="1034" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="245" />
+          <entry key="C#" value="1034" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cs" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/scripts/rigidbodyVehicle.cs">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/Class.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="288">
+              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+              <folding>
+                <marker date="1538238717901" expanded="false" signature="6:78" ph="..." />
+                <marker date="1538238717901" expanded="true" signature="115:1219" ph="{...}" />
+                <marker date="1538238717901" expanded="true" signature="351:1068" ph="{...}" />
+                <marker date="1538238717901" expanded="true" signature="355:485" ph="/* mouse input, mouse look ! ... */" />
+                <marker date="1538238717901" expanded="true" signature="836:970" ph="/* transform.position += transform.forward * vertical * moveSpeed; ... */" />
+                <marker date="1538238717901" expanded="true" signature="1121:1217" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/objectControls.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+              <folding>
+                <marker date="1538262212574" expanded="false" signature="6:78" ph="..." />
+                <marker date="1538262212574" expanded="true" signature="314:321" ph="{...}" />
+                <marker date="1538262212574" expanded="true" signature="587:616" ph="{...}" />
+                <marker date="1538262212574" expanded="true" signature="623:654" ph="{...}" />
+                <marker date="1538262212574" expanded="true" signature="701:812" ph="{...}" />
+                <marker date="1538262212574" expanded="true" signature="829:1279" ph="{...}" />
+                <marker date="1538262212574" expanded="true" signature="849:983" ph="{...}" />
+                <marker date="1538262212574" expanded="true" signature="1019:1202" ph="{...}" />
+                <marker date="1538262212574" expanded="true" signature="1226:1276" ph="{...}" />
+                <marker date="1538262212574" expanded="true" signature="1246:1273" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,12 +84,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/scripts/rigidbodyVehicle.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/objectControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/rigidbodyVehicle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Class.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/scripts/rigidbodyVehicle.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Class.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/objectControls.cs" />
       </list>
     </option>
   </component>
@@ -123,12 +166,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538077253050</updated>
-      <workItem from="1538077258199" duration="2492000" />
+      <workItem from="1538077258199" duration="7399000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2492000" />
+    <option name="totallyTimeSpent" value="7399000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -190,8 +233,42 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/scripts/rigidbodyVehicle.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="242">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/Class.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+          <folding>
+            <marker date="1538238717901" expanded="false" signature="6:78" ph="..." />
+            <marker date="1538238717901" expanded="true" signature="115:1219" ph="{...}" />
+            <marker date="1538238717901" expanded="true" signature="351:1068" ph="{...}" />
+            <marker date="1538238717901" expanded="true" signature="355:485" ph="/* mouse input, mouse look ! ... */" />
+            <marker date="1538238717901" expanded="true" signature="836:970" ph="/* transform.position += transform.forward * vertical * moveSpeed; ... */" />
+            <marker date="1538238717901" expanded="true" signature="1121:1217" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/objectControls.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+          <folding>
+            <marker date="1538262212574" expanded="false" signature="6:78" ph="..." />
+            <marker date="1538262212574" expanded="true" signature="314:321" ph="{...}" />
+            <marker date="1538262212574" expanded="true" signature="587:616" ph="{...}" />
+            <marker date="1538262212574" expanded="true" signature="623:654" ph="{...}" />
+            <marker date="1538262212574" expanded="true" signature="701:812" ph="{...}" />
+            <marker date="1538262212574" expanded="true" signature="829:1279" ph="{...}" />
+            <marker date="1538262212574" expanded="true" signature="849:983" ph="{...}" />
+            <marker date="1538262212574" expanded="true" signature="1019:1202" ph="{...}" />
+            <marker date="1538262212574" expanded="true" signature="1226:1276" ph="{...}" />
+            <marker date="1538262212574" expanded="true" signature="1246:1273" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

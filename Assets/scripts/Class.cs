@@ -6,6 +6,8 @@ public class Class : MonoBehaviour {
 
 	//usage: put this on a capsule with a rigidbody, mouse look and WASD movement
 	public float moveSpeed;
+
+	public float cameraSpeed;
 	//this variable will remember input and pass it to physics
 	Vector3 inputVector;
 		
@@ -17,8 +19,8 @@ public class Class : MonoBehaviour {
 		float mouseY = Input.GetAxis("Mouse Y");
 		
 		//rotate camera based on mouse input
-		transform.Rotate(0f, mouseX, 0f);
-		transform.Rotate(-mouseY, 0f, 0f);
+		transform.Rotate(0f, mouseX * cameraSpeed, 0f);
+		transform.Rotate(-mouseY * cameraSpeed, 0f, 0f);
 		
 		//WASD MOVEMENT 
 		float horizontal = Input.GetAxis("Horizontal");
