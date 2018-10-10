@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class objectControls : MonoBehaviour
 {
@@ -8,9 +10,10 @@ public class objectControls : MonoBehaviour
 	public Transform player;
 	public Transform playerCam;
 	public float throwForce = 1;
-	bool hasPlayer = false;
+	//bool hasPlayer = false;
 	bool isCarried = false;
 	private bool touched = false;
+	public PlayerScript playerScript;
 
 
 	void Start()
@@ -22,9 +25,9 @@ public class objectControls : MonoBehaviour
 	void Update()
 	{
 		//calculate distance between player and gameobject
-		float dist = Vector3.Distance(gameObject.transform.position, player.position);
+		//float dist = Vector3.Distance(gameObject.transform.position, player.position);
 		//if distance is less than 3.5f, we can pick up object
-		if (dist <= 5.5f)
+		/*if (dist <= 5.5f)
 		{
 			Debug.Log("player in distance");
 			hasPlayer = true;
@@ -32,13 +35,14 @@ public class objectControls : MonoBehaviour
 		else
 		{
 			hasPlayer = false;
-		}
-
-		if (hasPlayer && Input.GetKeyDown(KeyCode.Space))
+		}*/
+        //detecting if the raycast is hitting this object
+		if (playerScript.PlayerIsLooking == GetComponent<Collider>() && Input.GetKeyDown(KeyCode.Space))
 		{
 			GetComponent<Rigidbody>().isKinematic = true;
 			transform.parent = playerCam;
 			isCarried = true;
+			Debug.Log("picked up");
 
 		}
 

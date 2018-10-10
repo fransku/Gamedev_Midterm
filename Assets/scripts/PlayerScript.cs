@@ -2,26 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Class : MonoBehaviour {
+public class PlayerScript : MonoBehaviour {
 
 	//usage: put this on a capsule with a rigidbody, mouse look and WASD movement
 	public float moveSpeed;
 
-	public float cameraSpeed;
+	public Collider PlayerIsLooking;
+	
 	//this variable will remember input and pass it to physics
 	Vector3 inputVector;
 		
 	void Update () {
-		//mouse input, mouse look !
-		//mouse DELTAS (different between frames
-		//be 0 when mouse isnt moving, this is not moues position
-		float mouseX = Input.GetAxis("Mouse X");
-		float mouseY = Input.GetAxis("Mouse Y");
+		Ray myRay = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
+		float maxRayPickUp = 10f; 
+		RaycastHit myRayHit = new RaycastHit();
+	
+		Debug.DrawRay(myRay.origin, myRay.direction * maxRayPickUp, Color.cyan);
 		
-		//rotate camera based on mouse input
-		transform.Rotate(0f, mouseX * cameraSpeed, 0f);
-		transform.Rotate(-mouseY * cameraSpeed, 0f, 0f);
-		
+		if (Physics.Raycast(myRay, out myRayHit, maxRayPickUp))
+		{
+			Debug.Log("player in distance");
+            //raycast is remembering what we are looking at thru playerislooking collider
+			PlayerIsLooking = myRayHit.collider;
+		}else
+		{
+            PlayerIsLooking = null; 
+		}
+
 		//WASD MOVEMENT 
 		float horizontal = Input.GetAxis("Horizontal");
 		float vertical = Input.GetAxis("Vertical");
