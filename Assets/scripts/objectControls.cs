@@ -15,6 +15,8 @@ public class objectControls : MonoBehaviour
 	private bool touched = false;
 	public PlayerScript playerScript;
 
+    
+
 
 	void Start()
 	{
@@ -36,38 +38,41 @@ public class objectControls : MonoBehaviour
 		{
 			hasPlayer = false;
 		}*/
+
+        
         //detecting if the raycast is hitting this object
 		if (playerScript.PlayerIsLooking == GetComponent<Collider>() && Input.GetKeyDown(KeyCode.Space))
 		{
 			GetComponent<Rigidbody>().isKinematic = true;
-			transform.parent = playerCam;
-			isCarried = true;
+            //transform.parent = playerCam;
+     
+            isCarried = true;
 			Debug.Log("picked up");
 
 		}
 
 		if (isCarried)
 		{
-			//if touching other object or wall, it just falls
-			if (touched)
+            //if touching other object or wall, it just falls
+            /*if (touched)
 			{
 				GetComponent<Rigidbody>().isKinematic = false;
-				transform.parent = null;
+				//transform.parent = null;
 				isCarried = false;
 				touched = false;
-			}
-
-			if (Input.GetMouseButtonDown(0)) //primary button to throw things away
+			}*/
+            gameObject.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 5f;
+            if (Input.GetMouseButtonDown(0)) //primary button to throw things away
 			{
-				GetComponent<Rigidbody>().isKinematic = false;
-				transform.parent = null;
+			GetComponent<Rigidbody>().isKinematic = false;
+			//	transform.parent = null;
 				isCarried = false;
 				GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
 			}
 			else if (Input.GetMouseButtonDown(1)) //secondary button drops object, no force
 			{
-			//	GetComponent<RigidBody>().isKinematic = false;
-				transform.parent = null;
+				GetComponent<Rigidbody>().isKinematic = false;
+				//transform.parent = null;
 				isCarried = false; 
 			}
 		}
@@ -75,13 +80,14 @@ public class objectControls : MonoBehaviour
 
 
 	//two objects dont touch at once
+    /*
 	void OnTriggerEnter()
 	{
 		if (isCarried)
 		{
 			touched = true;
 		}
-	}
+	}*/
 }
 
 	

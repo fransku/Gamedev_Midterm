@@ -1191,6 +1191,7 @@ GameObject:
   - component: {fileID: 374948497}
   - component: {fileID: 374948500}
   - component: {fileID: 374948499}
+  - component: {fileID: 374948501}
   m_Layer: 0
   m_Name: drawer
   m_TagString: Untagged
@@ -1205,7 +1206,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 374948495}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.39, y: 7.71, z: 2.81}
+  m_LocalPosition: {x: 13.43, y: 8.1, z: 2.81}
   m_LocalScale: {x: 0.81, y: 0.42, z: 0.82}
   m_Children:
   - {fileID: 838381255}
@@ -1255,7 +1256,7 @@ BoxCollider:
   m_GameObject: {fileID: 374948495}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 2.6743553, z: 3.9027624}
   m_Center: {x: 0, y: 1.6188874, z: 0.013517316}
@@ -1271,6 +1272,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.6743553, z: 3.9027624}
   m_Center: {x: 0, y: 1.6188874, z: 0.013517316}
+--- !u!64 &374948501
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374948495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!1 &401595807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1328,7 @@ BoxCollider:
   m_GameObject: {fileID: 401595807}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1482,6 +1497,7 @@ GameObject:
   - component: {fileID: 460909494}
   - component: {fileID: 460909493}
   - component: {fileID: 460909498}
+  - component: {fileID: 460909500}
   - component: {fileID: 460909499}
   m_Layer: 0
   m_Name: player
@@ -1593,12 +1609,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460909492}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed2f5d0b68031c843b5a200bdde46227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSpeed: 4
+--- !u!114 &460909500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 460909492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03297512b244ac4182869f0632e1671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSpeed: 100
 --- !u!1 &467753975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,7 +1903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 460909497}
   playerCam: {fileID: 144334722}
-  throwForce: 10
+  throwForce: 100
   playerScript: {fileID: 460909493}
 --- !u!54 &500452893
 Rigidbody:
@@ -1900,7 +1928,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 500452887}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -8890,7 +8918,7 @@ BoxCollider:
   m_GameObject: {fileID: 1268248667}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
