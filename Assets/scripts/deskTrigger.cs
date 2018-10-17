@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class deskTrigger : MonoBehaviour {
 
@@ -15,6 +16,11 @@ public class deskTrigger : MonoBehaviour {
 			GameManager.score += 1;
 			Debug.Log(GameManager.score + "  number of candles");
 
-		}
-	}
+            if (GameManager.score == 6)
+            {
+                SceneManager.LoadScene("end");
+            }
+
+        }
+    }
 }
