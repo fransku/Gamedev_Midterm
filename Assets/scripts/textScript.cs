@@ -8,7 +8,8 @@ public class textScript : MonoBehaviour {
     //usage: i named this textScript but this has most of the game progression here. 
 
 	public Text myTextDisplay; //assign in Inspector  
-	public deskTrigger desk; //referencing the desk progress
+    public Text myTextDisplay2; //center text box
+    public deskTrigger desk; //referencing the desk progress
 	void Start ()
 	{
 		//myTextDisplay.text = "heyo get some candles and put it on the  \nspace to grab things, click to throw";
@@ -16,9 +17,28 @@ public class textScript : MonoBehaviour {
 	}
 
     //seconds left to find candles
-    float timeLeft = 100f; 
+    float timeLeft = 116f; 
 	void Update () {
-        myTextDisplay.text = "Time left: " + (int)timeLeft;
+        //first text box scene
+        myTextDisplay2.text = "OH NO.. THE POWER WENT OUT!";
+
+          if (timeLeft < 112)
+            myTextDisplay2.text = "I HAVE TO WORK ON MY ART PROJECT.."; 
+
+        if (timeLeft < 108)
+           myTextDisplay2.text = "I'M SURE I HAVE A FEW CANDLES LYING AROUND ";
+            
+        if (timeLeft < 104)
+            myTextDisplay2.text = "GET THEM TO MY DESK BEFORE TIME RUNS OUT!";
+
+        if (timeLeft < 101)
+            myTextDisplay2.text = " ";
+        //   Debug.Log(timeLeft);
+        if ( timeLeft < 101) 
+        {
+            myTextDisplay.text = "TIME LEFT: " + (int)timeLeft;
+            Debug.Log("time left text should be on"); 
+        }
 
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)

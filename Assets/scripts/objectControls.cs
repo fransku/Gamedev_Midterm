@@ -12,7 +12,7 @@ public class objectControls : MonoBehaviour
     public float throwForce = 1;
     //bool hasPlayer = false;
     bool isCarried = false;
-    private bool touched = false;
+   // private bool touched = false;
     public PlayerScript playerScript;
 
 

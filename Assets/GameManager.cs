@@ -26,10 +26,6 @@ public class GameManager : MonoBehaviour {
     }
      void Update()
     {
-        if (score == 6)
-        {
-            SceneManager.LoadScene("end");
-        }
-        
+
     }
 }

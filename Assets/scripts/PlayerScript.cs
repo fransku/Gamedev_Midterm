@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -8,11 +6,21 @@ public class PlayerScript : MonoBehaviour {
 	public float moveSpeed;
 
 	public Collider PlayerIsLooking;
-	
-	//this variable will remember input and pass it to physics
-	Vector3 inputVector;
-		
-	void Update () {
+
+    //jump stuff
+    public bool isGrounded;
+    public Vector3 jump;
+    public float jumpForce = 10.0f;
+    Rigidbody rb;
+    //this variable will remember input and pass it to physics
+    Vector3 inputVector;
+
+    void Start()
+    {//more jump stuff
+        rb = GetComponent<Rigidbody>();
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
+    }
+    void Update () {
 		Ray myRay = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
 		float maxRayPickUp = 10f; 
 		RaycastHit myRayHit = new RaycastHit();
@@ -37,8 +45,40 @@ public class PlayerScript : MonoBehaviour {
 		//transform.position += transform.right * horizontal * moveSpeed; 
 
 		inputVector = transform.forward * vertical;
-		inputVector += transform.right * horizontal; 
-	}
+		inputVector += transform.right * horizontal;
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+
+            //   rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+              rb.AddForce(jumpForce * transform.up, ForceMode.Impulse);
+   
+               isGrounded = false;
+        }
+        
+
+        //grounded stuff
+        Ray ray = new Ray(transform.position, Vector3.down);
+		
+		// step 2: set the raycasts maximum distance
+		float maxRaycastDistance = 6f; 
+		
+		//step 3: optional- visualize the raycast
+		Debug.DrawRay(ray.origin, ray.direction * maxRaycastDistance, Color.yellow);
+		
+		//step 4: actually shoot the raycast
+		if (Physics.Raycast(ray, maxRaycastDistance))
+		{
+			Debug.Log("the grounded raycast hit the floor");
+            isGrounded = true;
+		}
+		else
+		{
+			//transform.Rotate(0, 5f, 0);
+            isGrounded = false;
+		}
+
+    }
 
 	//it runs every physics frame 
 	void FixedUpdate()
