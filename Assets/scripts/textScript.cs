@@ -17,18 +17,18 @@ public class textScript : MonoBehaviour {
 	}
 
     //seconds left to find candles
-    float timeLeft = 116f; 
+    float timeLeft = 113f; 
 	void Update () {
         //first text box scene
         myTextDisplay2.text = "OH NO.. THE POWER WENT OUT!";
 
-          if (timeLeft < 112)
+          if (timeLeft < 109)
             myTextDisplay2.text = "I HAVE TO WORK ON MY ART PROJECT.."; 
 
-        if (timeLeft < 108)
-           myTextDisplay2.text = "I'M SURE I HAVE A FEW CANDLES LYING AROUND ";
+        if (timeLeft < 106)
+           myTextDisplay2.text = "I'M SURE I HAVE SOME CANDLES LYING AROUND ";
             
-        if (timeLeft < 104)
+        if (timeLeft < 103)
             myTextDisplay2.text = "GET THEM TO MY DESK BEFORE TIME RUNS OUT!";
 
         if (timeLeft < 101)
@@ -36,7 +36,7 @@ public class textScript : MonoBehaviour {
         //   Debug.Log(timeLeft);
         if ( timeLeft < 101) 
         {
-            myTextDisplay.text = "TIME LEFT: " + (int)timeLeft;
+            myTextDisplay.text = "TIME LEFT: " + (int)timeLeft +  "\nCANDLES COLLECTED: " + GameManager.score;
             Debug.Log("time left text should be on"); 
         }
 
@@ -46,5 +46,11 @@ public class textScript : MonoBehaviour {
             GameManager.score = 0;
             SceneManager.LoadScene("end");
         }
-	}
+
+        //speed up playtesting
+        if (Input.GetKeyDown(KeyCode.T)) 
+        {
+            timeLeft = 1f; 
+        }
+    }
 }

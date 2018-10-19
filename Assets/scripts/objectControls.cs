@@ -16,6 +16,10 @@ public class objectControls : MonoBehaviour
     public PlayerScript playerScript;
 
 
+    //hand sprite change 
+    public GameObject normHand;
+    public GameObject grabHand;
+
 
 
     void Start()
@@ -61,6 +65,11 @@ public class objectControls : MonoBehaviour
 				isCarried = false;
 				touched = false;
 			}*/
+
+            //hand sprite change to grab hand
+            grabHand.SetActive(true);
+            normHand.SetActive(false);
+
             gameObject.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 5f;
             if (Input.GetMouseButtonDown(1)) //secondary button to throw things away
             {
@@ -68,6 +77,9 @@ public class objectControls : MonoBehaviour
                 //	transform.parent = null;
                 isCarried = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
+
+                grabHand.SetActive(false);
+                normHand.SetActive(true);
             }
         }
 

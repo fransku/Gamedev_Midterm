@@ -20,7 +20,7 @@ public class cameraNew : MonoBehaviour {
         //better mouse look: 
         //add mouse input to vertical look, then clamp verticallook 
         verticalLook += -mouseY;
-        verticalLook = Mathf.Clamp(verticalLook, -60f, 60f);
+        verticalLook = Mathf.Clamp(verticalLook, -50f, 50f);
         //actually apply veritcalook to camera rotation
         Camera.main.transform.localEulerAngles = new Vector3(verticalLook, 0f, 0f);
 

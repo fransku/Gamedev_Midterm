@@ -47,17 +47,7 @@ public class PlayerScript : MonoBehaviour {
 		inputVector = transform.forward * vertical;
 		inputVector += transform.right * horizontal;
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-
-            //   rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-              rb.AddForce(jumpForce * transform.up, ForceMode.Impulse);
-   
-               isGrounded = false;
-        }
-        
-
-        //grounded stuff
+        //grounded stuff for jump
         Ray ray = new Ray(transform.position, Vector3.down);
 		
 		// step 2: set the raycasts maximum distance
@@ -83,6 +73,19 @@ public class PlayerScript : MonoBehaviour {
 	//it runs every physics frame 
 	void FixedUpdate()
 	{
-		GetComponent<Rigidbody>().velocity = inputVector * moveSpeed + Physics.gravity * 0.69f;
-	}
+		rb.velocity = inputVector * moveSpeed + Physics.gravity * 0.69f;
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        { //all the jump scripts im testing out 
+
+         
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+           //  rb.velocity = jump * jumpForce + Physics.gravity * 0.4f; 
+           //   rb.AddForce(jumpForce * transform.up, ForceMode.Impulse);
+
+            isGrounded = false;
+        }
+
+    }
 }
