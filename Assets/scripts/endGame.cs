@@ -15,6 +15,8 @@ public class endGame : MonoBehaviour
     //set button text
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         if (GameManager.score == 0)
         {
             endText.text = "You Lose";
@@ -22,7 +24,7 @@ public class endGame : MonoBehaviour
             //    buttonOption2.gameObject.GetComponent<Text>().text = ("Quit");
         }
         if (GameManager.score == 6)
-        {
+        {   
             endText.text = "You Win";
             buttonOption1.text = "Main Menu";
             //    buttonOption2.gameObject.GetComponent<Text>().text = ("Quit");

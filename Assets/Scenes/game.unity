@@ -10034,7 +10034,7 @@ MonoBehaviour:
   PlayerIsLooking: {fileID: 0}
   isGrounded: 1
   jump: {x: 0, y: 0, z: 0}
-  jumpForce: 1
+  jumpForce: 100
 --- !u!136 &460909494
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10113,7 +10113,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460909492}
   serializedVersion: 2
-  m_Mass: 0.01
+  m_Mass: 1
   m_Drag: 2
   m_AngularDrag: 1
   m_UseGravity: 1
